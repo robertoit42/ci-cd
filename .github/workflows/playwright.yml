@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.64.1-jammy
+      env:
+        HOME: /root   # 👈 esto fuerza a Firefox a usar /root como HOME
     steps:
       - uses: actions/checkout@v4
       # Actualiza npm dentro del contenedor para soportar lockfileVersion 3.
